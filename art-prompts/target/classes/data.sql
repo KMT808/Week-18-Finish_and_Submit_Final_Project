@@ -1,0 +1,13 @@
+INSERT INTO supply (supply) VALUES ('Graphite pencils');
+INSERT INTO supply (supply) VALUES ('Colored pencils');
+INSERT INTO supply (supply) VALUES ('Pens');
+INSERT INTO supply (supply) VALUES ('Charcoal');
+INSERT INTO supply (supply) VALUES ('White drawing paper');
+INSERT INTO supply (supply) VALUES ('Toned drawing paper');
+INSERT INTO supply (supply) VALUES ('Watercolor pencils');
+INSERT INTO supply (supply) VALUES ('Watercolor tubes or pans');
+INSERT INTO supply (supply) VALUES ('Paint brushes');
+INSERT INTO supply (supply) VALUES ('Watercolor paper');
+INSERT INTO supply (supply) VALUES ('Kneaded eraser');
+INSERT INTO supply (supply) VALUES ('White eraser');
+INSERT INTO supply (supply) VALUES ('Tracing paper');

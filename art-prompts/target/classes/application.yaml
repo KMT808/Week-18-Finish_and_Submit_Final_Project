@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: art_prompts
+    password: art_prompts
+    url: jdbc:mysql://localhost:3306/art_prompts
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+    
+  sql:
+    init:
+      mode: always    
