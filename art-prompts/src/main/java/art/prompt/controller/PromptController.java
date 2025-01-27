@@ -25,6 +25,8 @@ public class PromptController {
   @Autowired
   private PromptService promptService;
   
+  // Method to post or insert a Contributor to the Contributor table. 
+  //Uses the saveContributor method to save data
   @PostMapping("/contributor")
   @ResponseStatus(code = HttpStatus.CREATED)
   public ContributorData insertContributor(@RequestBody ContributorData contributorData) {
@@ -32,6 +34,8 @@ public class PromptController {
     return promptService.saveContributor(contributorData);
   }
   
+  // Method to put or update Contributor data for a contributor that is in the Contributor table.
+  //Uses the save Contributor method to save the data
   @PutMapping("/contributor/{contributorId}")
   public ContributorData updateContributor(@PathVariable Long contributorId,
       @RequestBody ContributorData contributorData) {
@@ -40,24 +44,28 @@ public class PromptController {
     return promptService.saveContributor(contributorData);
   }
   
+  // Method to get or retrieve all contributors in the Contributor table.
   @GetMapping("/contributor")
   public List<ContributorData> retrieveAllContributors() {
     log.info("Retrieve all contributors called.");
     return promptService.retrieveAllContributors();
   }
   
+  // Method to get or retrieve a Contributor by Id from the Contributor table.
   @GetMapping("/contributor/{contributorId}")
-  private ContributorData retieveContributorById(@PathVariable Long contributorId) {
+  private ContributorData retrieveContributorById(@PathVariable Long contributorId) {
     log.info("Retrieving contributor with ID=", contributorId);
     return promptService.retrieveContributorById(contributorId);
   }
   
+  // Method to display an error if a request is sent to to delete all contributors in the Contributor table.
   @DeleteMapping("/contributor")
   public void deleteAllContributors() {
     log.info("Attempting to delete all contributors");
     throw new UnsupportedOperationException("Deleting all contributors is not allowed.");
   }
   
+  // Method to delete a contributor by contributor Id in the Contributor table.
   @DeleteMapping("/contributor/{contributorId}")
   public Map<String, String> deleteContributorById(@PathVariable Long contributorId) {
     log.info("Deleting contributor with ID={}", contributorId);
@@ -68,6 +76,7 @@ public class PromptController {
         "Deletion of contributor with ID=" + contributorId + " was successful.");
   }
   
+  // Method that posts or inserts a prompt into the Prompt table
   @PostMapping("/contributor/{contributorId}/prompt")
   @ResponseStatus(code = HttpStatus.CREATED)
   public PromptData insertPrompt(@PathVariable Long contributorId,
@@ -78,6 +87,7 @@ public class PromptController {
     return promptService.savePrompt(contributorId, promptData);
   }
   
+  // Method to put or update a prompt Id in the Prompt table
   @PutMapping("/contributor/{contributorId}/prompt/{promptId}")
   public PromptData updatePrompt(@PathVariable Long contributorId,
       @PathVariable Long promptId,
@@ -90,6 +100,7 @@ public class PromptController {
     return promptService.savePrompt(contributorId, promptData);
   }
   
+  // Method to get or retrieve a prompt in the Prompt table by Id
   @GetMapping("/contributor/{contributorId}/prompt/{promptId}")
   public PromptData retrievePromptById(@PathVariable Long contributorId,
       @PathVariable Long promptId) {
